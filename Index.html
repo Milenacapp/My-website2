@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>London guide</title>
+    <!-- Importiamo Google Fonts per il corsivo elegante -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,400;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="stylesheet.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #0f172a;
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* Barra di navigazione con font corsivo */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(8px);
+            padding: 18px 0;
+            text-align: center;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            font-family: 'Playfair Display', Georgia, serif;
+        }
+
+        .navbar a {
+            color: #cbd5e1;
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: 600;
+            font-size: 18px;
+            font-style: italic; /* Corsivo sui link della navbar */
+            transition: color 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #e5ebed;
+        }
+
+        /* Contenuto principale della Home */
+        .homepage-content {
+            padding: 120px 20px 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        /* Elemento principale in corsivo */
+        .homepage-content h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 52px;
+            font-style: italic;
+            color: #f83838;
+            margin-bottom: 30px;
+        }
+
+        .attrazione-img {
+            width: 100%;
+            max-width: 800px;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+            margin-bottom: 40px;
+        }
+
+        .welcome-box {
+            background: #1e293b;
+            padding: 40px;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .welcome-box h2 {
+            font-size: 32px;
+            margin-top: 0;
+            color: #f8fafc;
+        }
+
+        .welcome-box p {
+            font-size: 17px;
+            color: #cbd5e1;
+            line-height: 1.7;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .features-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            text-align: left;
+        }
+
+        .feature-card {
+            background: #1e293b;
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.08);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .feature-card h3 {
+            margin-top: 0;
+            font-size: 22px;
+            color: #f1f5f7;
+        }
+
+        .feature-card p {
+            color: #94a3b8;
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body class="homepage-bg">
+
+    <!-- Barra di navigazione comune con link in corsivo -->
+    <nav class="navbar">
+        <a href="index.html">Home</a>
+        <a href="attractions.html">Attractions</a>
+        <a href="culture.html">Culture & Tea</a>
+        <a href="food.html">Food & Pubs</a>
+        <a href="shopping.html">Modern Vibes</a>
+    </nav>
+
+    <!-- Contenuto della pagina Home -->
+    <div class="homepage-content">
+        <!-- Titolo principale in corsivo -->
+        <h1>Welcome to London!</h1>
+        
+        <!-- Foto principale con classe per gestirne le dimensioni -->
+        <img src="bigben.jpg" alt="Big Ben in London" class="attrazione-img">
+
+        <!-- Sezione di introduzione colorata -->
+        <div class="welcome-box">
+            <h2>Why Visit London?</h2>
+            <p>London is a magical blend of two thousand years of history and ultra-modern pop culture. Whether it's your first time crossing the Atlantic or you're returning for more, there's always a new street to explore.</p>
+        </div>
+
+        <!-- Sezione con 3 riquadri colorati per le categorie del viaggio -->
+        <div class="features-container">
+            <div class="feature-card">
+                <h3>🏰 Royal Heritage</h3>
+                <p>Discover majestic palaces, ancient castles, and the royal traditions that shape the United Kingdom.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>☕ British Culture</h3>
+                <p>Enjoy a classic afternoon tea, ride the iconic red double-decker buses, and listen to the chimes of Big Ben.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>🛍️ Modern Vibes</h3>
+                <p>Shop until you drop in vibrant markets, modern boutiques, and the glowing lights of Piccadilly Circus.</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

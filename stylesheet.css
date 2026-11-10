@@ -1,0 +1,694 @@
+/* QUESTA RIGA VA MESSA ASSOLUTAMENTE IN CIMA A TUTTO NEL FILE CSS */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+/* Subito dopo metti le regole normali del body e delle card */
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    padding: 20px;
+}
+
+.attraction-card {
+    background: white;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.attraction-card h2 {
+    color: #002b49;
+}
+
+img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+  homepage: bg;
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.homepage-bg {
+    background-image: url('londonsfondo.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Stile della barra di navigazione in alto */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    overflow: hidden;
+    z-index: 1000;
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* Qui è dove colleghi l'immagine di sfondo alla grafica */
+.hero-image {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/londra.jpg');
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.hero-text {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+.hero-text h1 {
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+.content-section {
+    padding: 80px 20px;
+    text-align: center;
+    background-color: white;
+}
+.attraction-card h2 {
+    color: #002b49;
+    letter-spacing: 1px; /* Allarga leggermente le lettere per un look chic */
+    text-transform: uppercase; /* Trasforma tutto in maiuscolo per dare forza al titolo */
+}
+.attraction-card p {
+    line-height: 1.6; /* Aumenta lo spazio tra le righe rendendo la lettura super rilassante */
+    color: #555; /* Un grigio scuro elegante invece del nero pieno */
+    font-size: 1.05rem; /* Leggermente più grande e leggibile */
+}
+.attraction-card {
+    background: white;
+    padding: 25px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    
+    /* Questa riga aggiunge una bella linea blu scuro a sinistra della card */
+    border-left: 5px solid #002b49; 
+}
+/* 1. Rende il titolo principale ben leggibile con un'ombra scura sullo sfondo */
+.homepage-bg h1 {
+    color: #ffffff;
+    font-size: 3rem;
+    text-align: center;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    margin-top: 40px;
+}
+
+/* 2. Stile per il pulsante/link alle attrazioni */
+.homepage-bg a {
+    display: inline-block;
+    background-color: #001933; /* Blu scuro elegante stile Londra */
+    color: white;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin: 20px auto;
+}
+
+.homepage-bg a:hover {
+    background-color: #c8102e; /* Rosso iconico di Londra al passaggio del mouse */
+    transform: scale(1.05);
+}
+
+/* 3. LA CARD PRINCIPALE (Finestra per l'introduzione) */
+.welcome-box {
+    background: rgba(0, 25, 51, 0.85); /* Sfondo blu scuro semitrasparente */
+    border: 2px solid #c8102e; /* Bordo sottile rosso stile UK */
+    color: white;
+    padding: 30px;
+    margin: 30px auto;
+    max-width: 800px;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px); /* Effetto vetro sfocato dietro al box */
+}
+
+.welcome-box h2 {
+    color: #ffffff;
+    margin-top: 0;
+    letter-spacing: 1px;
+}
+
+/* 4. Contenitore per affiancare le 3 card delle categorie sotto */
+.features-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: 40px auto;
+}
+
+/* 5. Le 3 CARD DELLE CATEGORIE (Royal Heritage, British Culture, Modern Vibes) */
+.feature-card {
+    background: rgba(15, 11, 11, 0.95); /* Sfondo bianco quasi pieno per massima leggibilità */
+    color: #fffafa;
+    padding: 25px;
+    flex: 1;
+    min-width: 250px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    border-top: 5px solid #cf1212; /* Dettaglio superiore in blu notte */
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px); /* Effetto sollevamento al passaggio del mouse */
+}
+.attrazione-img {
+    display: block;          /* Trasforma l'immagine in un elemento a blocco */
+    margin: 20px auto;       /* Spaziatura sopra/sotto e 'auto' a destra e sinistra la centra perfettamente */
+    max-width: 600px;        /* Evita che diventi troppo grande */
+    width: 100%;             /* La rende reattiva */
+    height: auto;
+    border-radius: 12px;     /* Angoli arrotondati coordinati con le tue card */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Una bella ombra per staccarla dallo sfondo */
+}
+/* Container principale dello slideshow */
+.slideshow-container {
+  max-width: 100%;
+  position: relative;
+  margin: 20px auto 10px auto;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+/* Nasconde le slide di default (gestito da JS) */
+.mySlides {
+  display: none;
+}
+
+/* Immagini del carosello */
+.slideshow-img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Pulsanti delle frecce (Precedente e Successivo) */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.3s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Posiziona la freccia 'next' a destra */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* Effetto al passaggio del mouse sulle frecce */
+.prev:hover, .next:hover {
+  background-color: rgba(200, 16, 46, 0.8); /* Diventa rosso UK quando ci passi sopra! */
+}
+
+/* Numero della foto (1/3) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+  background: rgba(0,0,0,0.4);
+  border-bottom-right-radius: 8px;
+}
+
+/* Didascalia in basso */
+.slide-caption {
+  color: #fff;
+  font-size: 14px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  background: rgba(0, 25, 51, 0.75);
+}
+
+/* Pallini (Dots) */
+.dot {
+  cursor: pointer;
+  height: 12px;
+  width: 12px;
+  margin: 0 4px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #c8102e;
+}
+
+/* Animazione dissolvenza */
+.fade {
+  animation-name: fade;
+  animation-duration: 1s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+/* Effetto Hover per le immagini (requisito del progetto) */
+.hover-image {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-image:hover {
+    transform: scale(1.05); /* Ingrandisce leggermente l'immagine */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Aggiunge un'ombra figa */
+}
+/* Immagine inizialmente in bianco e nero */
+.hover-bw {
+    filter: grayscale(100%) !important;
+    -webkit-filter: grayscale(100%) !important;
+    transition: filter 0.4s ease, transform 0.3s ease !important;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 8px;
+}
+
+/* Quando il mouse passa sopra (hover) */
+.hover-bw:hover {
+    filter: grayscale(0%) !important;
+    -webkit-filter: grayscale(0%) !important;
+    transform: scale(1.03);
+}
+/* Stile per fare in modo che la foto diventi lo sfondo di tutta la pagina */
+.tea-page-bg {
+    background-image: url('classic-photo-of-a-woman-holding-a-tea-cup-3682153-789x1024.jpg');
+    background-size: cover;          /* Riempie tutta la pagina */
+    background-position: center;     /* Centra l'immagine */
+    background-attachment: fixed;    /* Effetto bloccato mentre scorri (molto figo) */
+    background-repeat: no-repeat;
+}
+.tea-page-bg {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url('classic-photo-of-a-woman-holding-a-tea-cup-3682153-789x1024.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+/* SEZIONE PUB CON SFONDO COOL ED EFFETTO PARALLAX */
+        .pub-parallax-section {
+            position: relative;
+            /* Sostituisci 'pub.jpg' con il nome esatto del file della foto del pub nella tua cartella */
+            background-image: linear-gradient(rgba(11, 15, 25, 0.75), rgba(11, 15, 25, 0.85)), url('pub');
+            background-attachment: fixed; /* Crea il magico effetto parallax mentre scorri! */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            padding: 120px 20px;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .pub-overlay-content {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(30, 41, 59, 0.75); /* Effetto vetro/glassmorphism */
+            backdrop-filter: blur(10px);
+            padding: 50px;
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .pub-overlay-content h2 {
+            font-size: 38px;
+            color: #f83838;
+            margin-bottom: 20px;
+        }
+
+        .pub-overlay-content .section-intro {
+            font-size: 18px;
+            color: #cbd5e1;
+            line-height: 1.8;
+            margin: 0;
+        }
+ 
+
+.parallax-section {
+    /* Sostituisci il link con l'immagine di Piccadilly o del tuo tema */
+    background-image: url('images/piccadilly.jpg'); 
+    height: 400px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.parallax-text {
+    background: rgba(0, 0, 0, 0.5); /* Sfondo scuro semitrasparente per leggere il testo */
+    padding: 20px 40px;
+    border-radius: 10px;
+}
+/* Stile per le card dei prodotti/shopping */
+.shopping-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.card {
+    background: #ffffff;
+    width: 300px;
+    padding: 15px;
+    border-radius: 12px;
+    /* Effetto box-shadow richiesto dal prof */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Effetto Hover sulle card */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+/* Responsive Design per schermi piccoli (Smartphone) */
+@media (max-width: 768px) {
+    .shopping-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .parallax-section {
+        height: 250px; /* Riduce l'altezza su mobile */
+    }
+}
+
+/* Stile generale della pagina */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.content-section {
+    padding: 40px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.content-section h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #111;
+}
+
+.content-section p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+
+
+/* Effetto Parallasse */
+.parallax-section {
+    /* Assicurati che il nome dell'immagine corrisponda esattamente a quello nella tua cartella */
+    background-image: url('images/piccadilly.jpg'); 
+    height: 450px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.parallax-text {
+    background: rgba(0, 0, 0, 0.65);
+    padding: 30px 50px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.parallax-text h1 {
+    margin: 0 0 10px 0;
+    font-size: 2.5rem;
+}
+
+/* Griglia per lo Shopping con Box Shadow e Hover */
+.shopping-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.card {
+    background: #ffffff;
+    width: 300px;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); /* Requisito Box-Shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Effetto Hover richiesto dal professore */
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    margin: 10px 0;
+    color: #222;
+}
+
+/* Responsive Design per Smartphone (@media query) */
+@media (max-width: 768px) {
+    .parallax-section {
+        height: 300px;
+        background-attachment: scroll; /* Su mobile il fixed a volte dà problemi, lo rendiamo fluido */
+    }
+    
+    .parallax-text {
+        padding: 15px 20px;
+    }
+    
+    .parallax-text h1 {
+        font-size: 1.8rem;
+    }
+    
+    .shopping-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+/* --- MODERN OVAL PILL NAVIGATION BAR --- */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(15, 23, 42, 0.95); /* Sleek dark theme background */
+    backdrop-filter: blur(8px);
+    overflow: hidden;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    padding: 12px 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Individual menu links styled as oval pills */
+.navbar a {
+    color: #ffffff;
+    text-align: center;
+    padding: 10px 22px;
+    margin: 0 6px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 50px; /* Creates the smooth oval pill shape */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover effect: turns into the iconic red pill when you pass the mouse over */
+.navbar a:hover {
+    background-color: #c8102e; /* UK Red */
+    color: #ffffff;
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Active state: keeps the current page highlighted as a red pill */
+.navbar a.active {
+    background-color: #c8102e; /* UK Red */
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(200, 16, 46, 0.4);
+}
+
+/* Pushes the rest of the page content down so it doesn't hide behind the fixed menu */
+body {
+    padding-top: 65px; 
+}
+
+/* Video Container pulito per file MP4 locale */
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding-bottom: 56.25%; /* Proporzione 16:9 */
+    height: 0;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+    border: 1px solid rgba(255,255,255,0.1);
+    background-color: #0b0f19;
+}
+
+.video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/* Stili di base per desktop o schermi grandi */
+body {
+    font-size: 16px;
+}
+/* --- STILE GLOBALE DELLA NAVBAR --- */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(8px);
+    padding: 15px 10px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    font-family: 'Playfair Display', Georgia, serif;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Fa andare a capo i link se lo schermo è stretto */
+    gap: 15px;
+}
+
+.navbar a {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 17px;
+    font-style: italic;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: #edf3f5;
+}
+
+/* --- RESPONSIVITÀ PER TABLET E SMARTPHONE --- */
+@media screen and (max-width: 768px) {
+    .navbar {
+        padding: 10px 5px;
+        gap: 10px; /* Riduce lo spazio tra i link su mobile */
+    }
+    
+    .navbar a {
+        font-size: 14px; /* Rimpicciolisce leggermente i testi per farli entrare nei telefoni */
+        margin: 0 5px;
+    }
+}

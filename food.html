@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>London - Food, Pubs & Markets</title>
+    <!-- Importiamo Google Fonts per un corsivo elegante -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,400;1,600&display=swap" rel="stylesheet">
+    <!-- Collegamento al foglio di stile globale e specifico -->
+    <link rel="stylesheet" href="stylesheet.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #0f172a;
+            color: #ffffff;
+            /* Font principale in corsivo elegante applicato a tutta la pagina */
+            font-family: 'Playfair Display', Georgia, serif;
+        }
+
+        /* Barra di navigazione comune e fissa con font corsivo */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(8px);
+            padding: 18px 0;
+            text-align: center;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            font-family: 'Playfair Display', Georgia, serif; /* Corsivo anche nella navbar */
+        }
+
+        .navbar a {
+            color: #cbd5e1;
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: 600;
+            font-size: 18px;
+            font-style: italic; /* Corsivo sui link della navbar */
+            transition: color 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #f4eded;
+        }
+
+        /* Hero Section d'impatto con sfumatura */
+        .food-hero {
+            height: 60vh;
+            background: linear-gradient(rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.9)), url('candem.jpg') no-repeat center center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            margin-top: 60px;
+        }
+
+        .hero-content h1 {
+            font-size: 52px;
+            margin-bottom: 15px;
+            color: #de0e0e;
+            letter-spacing: 1px;
+            font-style: italic;
+        }
+
+        .hero-content p {
+            font-size: 22px;
+            color: #f6faff;
+            max-width: 700px;
+            margin: 0 auto;
+            font-style: italic;
+        }
+
+        /* Sezione Mercati con Griglia Moderna */
+        .markets-section {
+            padding: 80px 50px;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .markets-section h2 {
+            text-align: center;
+            font-size: 40px;
+            margin-bottom: 50px;
+            color: #f8fafc;
+            position: relative;
+            font-style: italic;
+        }
+
+        .markets-section h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: #eb0909;
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        .market-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        /* EFFETTI SPECIALI SULLE CARD */
+        .market-card {
+            background: #1e293b;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+            border: 1px solid rgba(255,255,255,0.08);
+            transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s ease;
+            animation: fadeInUp 0.8s ease backwards;
+        }
+
+        .market-card:nth-child(1) { animation-delay: 0.1s; }
+        .market-card:nth-child(2) { animation-delay: 0.3s; }
+        .market-card:nth-child(3) { animation-delay: 0.5s; }
+
+        .market-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 25px 50px rgba(56, 189, 248, 0.2);
+            border-color: rgba(254, 255, 255, 0.4);
+        }
+
+        .img-container {
+            width: 100%;
+            height: 260px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .market-card:hover .img-container img {
+            transform: scale(1.1);
+        }
+
+        .card-content {
+            padding: 30px;
+        }
+
+        .card-content h3 {
+            margin: 0 0 15px 0;
+            font-size: 28px;
+            color: #f1f5f7;
+            font-style: italic;
+        }
+
+        .card-content p {
+            font-size: 17px;
+            color: #cbd5e1;
+            line-height: 1.8;
+            margin: 0;
+            font-style: italic;
+        }
+
+        /* Sezione Pubs & Food Tradizionale */
+        .pubs-section {
+            padding: 60px 50px 40px;
+            text-align: center;
+            background: #0b0f19;
+        }
+
+        .pubs-section h2 {
+            font-size: 40px;
+            color: #f8fafc;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .section-intro {
+            font-size: 19px;
+            color: #94a3b8;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.7;
+            font-style: italic;
+        }
+
+        /* Immagine finale del pub */
+        .pub-image-container {
+            padding: 0 50px 80px;
+            background: #0b0f19;
+            text-align: center;
+        }
+
+        .pub-image-container img {
+            width: 100%;
+            max-width: 1200px;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+
+        /* Animazione iniziale */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Barra di navigazione comune in corsivo -->
+    <nav class="navbar">
+        <a href="index.html">Home</a>
+        <a href="attractions.html">Attractions</a>
+        <a href="culture.html">Culture & Tea</a>
+        <a href="food.html">Food & Pubs</a>
+        <a href="shopping.html">Modern Vibes</a>
+    </nav>
+
+    <!-- HEADER / HERO SECTION -->
+    <header class="food-hero">
+        <div class="hero-content">
+            <h1>Flavours & Vibes of London</h1>
+            <p>From historic traditional pubs to vibrant, world-famous street food markets like Camden, Portobello, and Covent Garden.</p>
+        </div>
+    </header>
+
+    <!-- SEZIONE MERCATI (CAMDEN, PORTOBELLO & COVENT GARDEN) -->
+    <section class="markets-section">
+        <h2>Iconic Food & Culture Markets</h2>
+        <div class="market-grid">
+            
+            <!-- 1. Camden Town Market -->
+            <div class="market-card">
+                <div class="img-container">
+                    <img src="candem.jpg" alt="Camden Town Market">
+                </div>
+                <div class="card-content">
+                    <h3>Camden Town Market</h3>
+                    <p>Nestled along the scenic canals, Camden Market is the beating heart of alternative London culture. Beyond its gothic fashion and vintage stalls, it is an absolute paradise for global street food lovers. Here you can savor everything from authentic gourmet burgers and fiery South American empanadas to Taiwanese bao buns, churros, and mouth-watering vegan delicacies cooked right in front of you.</p>
+                </div>
+            </div>
+
+            <!-- 2. Portobello Road Market -->
+            <div class="market-card">
+                <div class="img-container">
+                    <img src="portobello" alt="Portobello Road Market">
+                </div>
+                <div class="card-content">
+                    <h3>Portobello Road Market</h3>
+                    <p>Famous worldwide for its charming pastel-colored Victorian townhouses and bustling antiques heritage, Portobello Road offers a sensory feast. Alongside rare vintage treasures and fresh flower stalls, the market treats visitors to delicious traditional British bakes, artisan cheeses, freshly squeezed juices, and international street eats that make strolling down this iconic Notting Hill road unforgettable.</p>
+                </div>
+            </div>
+
+            <!-- 3. Covent Garden Market -->
+            <div class="market-card">
+                <div class="img-container">
+                    <img src="garden.jpg" alt="Covent Garden Market">
+                </div>
+                <div class="card-content">
+                    <h3>Covent Garden Market</h3>
+                    <p>Located in the lively historic piazza, Covent Garden combines stunning 19th-century architecture with world-class dining. Under its magnificent glass roofs, you will find high-end artisanal food stalls, luxury chocolate shops, and gourmet pastry stands. Surrounded by street performers and elite restaurants, it is the ultimate destination for enjoying gourmet food in an atmosphere steeped in theatrical history.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SEZIONE PUBS & FOOD TRADIZIONALE -->
+    <section class="pubs-section">
+        <div class="pubs-content">
+            <h2>Pub Culture & Classic British Eats</h2>
+            <p class="section-intro">Experience the warm, cozy atmosphere of a classic British pub paired with incredible modern gastronomy. Indulge in legendary dishes like crispy battered fish and chips served with mushy peas, hearty Sunday roasts with Yorkshire pudding, and a pint of locally brewed traditional cask ale.</p>
+        </div>
+    </section>
+
+    <!-- IMMAGINE FINALE DEL PUB -->
+    <div class="pub-image-container">
+        <img src="pub" alt="Pub in London">
+    </div>
+
+</body>
+</html>

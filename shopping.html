@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Vibes & Shopping - London Guide</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <!-- Google Fonts: Playfair Display (stile elegante/londinese) e Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Stile generale e tema "Londinese" unificato per la pagina */
+        body, html {
+            margin: 0;
+            padding: 0;
+            background-color: #0b0f19;
+            color: #e18686;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Applicazione del font elegante "stile londinese" ai titoli e agli elementi chiave */
+        h1, h2, h3, .navbar a, .parallax-text h1, .toy-header h2, .toy-overlay-content h3, .card-content h3 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(11, 15, 25, 0.95);
+            backdrop-filter: blur(8px);
+            padding: 18px 0;
+            text-align: center;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .navbar a {
+            color: #cbd5e1;
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: 600;
+            font-size: 18px;
+            letter-spacing: 0.5px;
+            transition: color 0.3s;
+        }
+
+        .navbar a:hover, .navbar a.active {
+            color: #f0ecec; /* Rosso iconico stile Londra */
+        }
+
+        /* Sezioni di Contenuto */
+        .content-section {
+            padding: 100px 20px 50px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .content-section h2 {
+            font-size: 38px;
+            color: #de0b0b;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .content-section p {
+            font-size: 16px;
+            color: #94a3b8;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto 30px auto;
+            font-weight: 300;
+        }
+
+        /* Parallax o Banner Centrale */
+        .parallax-section {
+            background: linear-gradient(rgba(11,15,25,0.7), rgba(11,15,25,0.7)), url('piccadily.jpg') no-repeat center center/cover;
+            padding: 80px 20px;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            margin: 40px 0;
+        }
+
+        .parallax-text h1 {
+            font-size: 44px;
+            color: #e81919;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .parallax-text p {
+            font-size: 18px;
+            color: #d7d9dc;
+            font-weight: 300;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Griglia Shopping (Regent Street & Piccadilly) */
+        .shopping-grid {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .card {
+            background: #3e4043;
+            border-radius: 16px;
+            width: 350px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+            border: 1px solid rgba(255,255,255,0.08);
+            text-align: left;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-content h3 {
+            margin: 0 0 10px 0;
+            color: #cf1f1f;
+            font-size: 22px;
+            font-weight: 600;
+        }
+
+        .card-content p {
+            margin: 0;
+            font-size: 14px;
+            color: #eca0a0;
+            line-height: 1.5;
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+        }
+
+        /* Slider Hamleys & Build-A-Bear */
+        .toy-slider-section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 50px 20px 80px 20px;
+        }
+
+        .toy-slider-container {
+            width: 850px;
+            max-width: 95%;
+            background: #1e293b;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 30px;
+        }
+
+        .toy-header {
+            text-align: center;
+            padding: 30px 30px 15px 30px;
+        }
+
+        .toy-header h2 {
+            margin: 0 0 10px 0;
+            font-size: 30px;
+            color: #f83838;
+            font-weight: 700;
+        }
+
+        .toy-header p {
+            font-size: 15px;
+            color: #cbd5e1;
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+        }
+
+        .toy-card-effect {
+            display: flex;
+            flex-direction: column;
+            opacity: 1;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .toy-card-effect.fade-out {
+            opacity: 0;
+            transform: scale(0.98);
+        }
+
+        .toy-image-box {
+            width: 100%;
+            height: 320px;
+            background-color: #0f172a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .toy-image-box img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s ease;
+        }
+
+        .toy-slider-container:hover .toy-image-box img {
+            transform: scale(1.02);
+        }
+
+        .toy-overlay-content {
+            padding: 25px 35px;
+            text-align: center;
+            background: #1e293b;
+        }
+
+        .toy-overlay-content h3 {
+            margin: 0 0 10px 0;
+            font-size: 26px;
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        .toy-overlay-content p {
+            font-size: 15px;
+            color: #94a3b8;
+            line-height: 1.6;
+            margin: 0 auto;
+            max-width: 700px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+        }
+
+        .toy-slider-dots {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .toy-dot {
+            width: 10px;
+            height: 10px;
+            background: #475569;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .toy-dot.active {
+            background: #f83838;
+            width: 30px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="index.html">Home</a>
+        <a href="attractions.html">Attractions</a>
+        <a href="culture.html">Culture & Tea</a>
+        <a href="food.html">Food & Pubs</a>
+        <a href="shopping.html" class="active">Modern Vibes</a>
+    </nav>
+
+    <!-- Header Section with Embedded YouTube Video (Autoplay attivo) -->
+    <section class="content-section" style="padding-top: 120px;">
+        <h2>The Energy of Modern London</h2>
+        <p>Experience the vibrant atmosphere, dazzling neon lights, and fast-paced energy that make the British capital truly unique.</p>
+        <iframe width="1000" height="650" src="video.mp4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </section>
+
+    <!-- Parallax Scrolling Section -->
+    <div class="parallax-section">
+        <div class="parallax-text">
+            <h1>Piccadilly Circus: Modern Vibes & Shopping</h1>
+            <p>The beating heart of urban trends and world-class shopping in London.</p>
+        </div>
+    </div>
+
+    <!-- Shopping and Detailed Content Section -->
+    <section class="content-section" style="padding-top: 20px;">
+        <h2>Shopping, Neon, and Urban Culture</h2>
+        <p>Piccadilly Circus and its surrounding hubs like Regent Street and Oxford Street represent the ultimate blend of historic British architecture and cutting-edge retail innovation.</p>
+        
+        <div class="shopping-grid">
+            <div class="card">
+                <img src="regent-street-regent-street-1e2ea0cbd9759c2e8a12c60fcc637f9a.jpg" alt="Regent Street Shopping">
+                <div class="card-content">
+                    <h3>Regent Street</h3>
+                    <p>Classic architecture meets world-renowned international fashion brands.</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <img src="piccadily.jpg" alt="Piccadilly Lights">
+                <div class="card-content">
+                    <h3>The Iconic Lights</h3>
+                    <p>The famous curved electronic billboards lighting up London's evening skyline.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slider Interattivo Hamleys & Build-A-Bear -->
+    <section class="toy-slider-section">
+        <div class="toy-slider-container">
+            
+            <div class="toy-header">
+                <h2>🧸 Magical Stops: Hamleys & Build-A-Bear</h2>
+                <p>Click on the dots at the bottom or on the card to discover the sections of the famous toy stores!</p>
+            </div>
+
+            <!-- Card Principale dello Slider -->
+            <div class="toy-card-effect" id="toy-card" onclick="nextToySlide()">
+                <div class="toy-image-box">
+                    <img id="toy-img" src="hamleys pt1.jpg" alt="Hamleys Toy Shop">
+                </div>
+                <div class="toy-overlay-content">
+                    <h3 id="toy-title">Hamleys: The Grand Entrance</h3>
+                    <p id="toy-desc">Loading...</p>
+                </div>
+            </div>
+            
+            <!-- Indicatori a pillola -->
+            <div class="toy-slider-dots">
+                <span class="toy-dot active" onclick="event.stopPropagation(); showToySlide(0);"></span>
+                <span class="toy-dot" onclick="event.stopPropagation(); showToySlide(1);"></span>
+                <span class="toy-dot" onclick="event.stopPropagation(); showToySlide(2);"></span>
+                <span class="toy-dot" onclick="event.stopPropagation(); showToySlide(3);"></span>
+            </div>
+
+        </div>
+    </section>
+
+    <script>
+        const toysData = [
+            {
+                title: "Hamleys: The Grand Entrance",
+                desc: "Spanning seven magical floors filled with live toy demonstrations, flying drones, and cheering staff, Hamleys on Regent Street has been bringing joy since 1760.",
+                img: "hamleys pt1.jpg"
+            },
+            {
+                title: "Hamleys: Interactive Fun",
+                desc: "Test out remote-controlled cars, watch live shows, and explore specialized levels dedicated to plush toys and gadgets across all seven floors.",
+                img: "hamleys pt2.jpg"
+            },
+            {
+                title: "Build-A-Bear: The Store Experience",
+                desc: "Take home a unique, personalized London keepsake by starting your journey with an adorable un-stuffed animal waiting to come to life.",
+                img: "build pt1.jpg"
+            },
+            {
+                title: "Build-A-Bear: London Outfits",
+                desc: "Dress your new furry friend in exclusive London-themed styles, complete with British guards uniforms or double-decker bus hoodies.",
+                img: "build pt2.jpg"
+            }
+        ];
+
+        let currentToyIndex = 0;
+        let isToyAnimating = false;
+
+        const toyCardElement = document.getElementById('toy-card');
+        const toyImgElement = document.getElementById('toy-img');
+        const toyTitleElement = document.getElementById('toy-title');
+        const toyDescElement = document.getElementById('toy-desc');
+        const toyDots = document.querySelectorAll('.toy-dot');
+
+        // Inizializza la prima slide
+        toyImgElement.src = toysData[0].img;
+        toyTitleElement.textContent = toysData[0].title;
+        toyDescElement.textContent = toysData[0].desc;
+
+        function showToySlide(newIndex) {
+            if (isToyAnimating || newIndex === currentToyIndex) return;
+            isToyAnimating = true;
+
+            toyCardElement.classList.add('fade-out');
+
+            setTimeout(() => {
+                currentToyIndex = newIndex;
+                toyImgElement.src = toysData[currentToyIndex].img;
+                toyImgElement.alt = toysData[currentToyIndex].title;
+                toyTitleElement.textContent = toysData[currentToyIndex].title;
+                toyDescElement.textContent = toysData[currentToyIndex].desc;
+
+                toyDots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === currentToyIndex);
+                });
+
+                toyCardElement.classList.remove('fade-out');
+                isToyAnimating = false;
+            }, 300);
+        }
+
+        function nextToySlide() {
+            let nextIndex = (currentToyIndex + 1) % toysData.length;
+            showToySlide(nextIndex);
+        }
+    </script>
+</body>
+</html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Titolo della pagina</title>
+    <link rel="stylesheet" href="stylesheet.css">
+</head>

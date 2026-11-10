@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>London Attractions</title>
+    <!-- Importiamo Google Fonts per il corsivo elegante -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,400;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="stylesheet.css">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background-color: #0f172a;
+            color: #ffffff;
+            /* Font principale impostato in corsivo elegante */
+            font-family: 'Playfair Display', Georgia, serif;
+            overflow: hidden;
+        }
+
+        /* Barra di navigazione in corsivo */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(8px);
+            padding: 18px 0;
+            text-align: center;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            font-family: 'Playfair Display', Georgia, serif;
+        }
+
+        .navbar a {
+            color: #cbd5e1;
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: 600;
+            font-size: 18px;
+            font-style: italic; /* Corsivo sui link della navbar */
+            transition: color 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #edeff0;
+        }
+
+        .attractions-hero-slider {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding-top: 30px;
+        }
+
+        /* CARD MAGGIORE: Ancora più larga e spaziosa */
+        .slider-container {
+            width: 1100px;
+            max-width: 94%;
+            background: #1e293b;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.75);
+            border: 1px solid rgba(255,255,255,0.12);
+        }
+
+        .attraction-card-effect {
+            display: flex;
+            flex-direction: column;
+            opacity: 1;
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+
+        .attraction-card-effect.fade-out {
+            opacity: 0;
+            transform: translateX(-40px);
+        }
+
+        /* RIQUADRO IMMAGINE AMPIO E CINEMATOGRAFICO */
+        .image-box {
+            width: 100%;
+            height: 480px;
+            background-color: #0b0f19;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .image-box img {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            transition: transform 0.6s ease;
+        }
+
+        .slider-container:hover .image-box img {
+            transform: scale(1.03);
+        }
+
+        .overlay-content {
+            padding: 45px 50px;
+            text-align: center;
+            background: #1e293b;
+        }
+
+        .overlay-content h2 {
+            margin: 0 0 15px 0;
+            font-size: 38px;
+            color: #f83838;
+            font-style: italic; /* Corsivo per il titolo dell'attrazione */
+        }
+
+        /* DESCRIZIONE PIÙ LUNGA E STRUTTURATA */
+        .overlay-content p {
+            font-size: 18px;
+            color: #cbd5e1;
+            line-height: 1.7;
+            margin: 0 auto;
+            max-width: 900px;
+            font-style: italic; /* Corsivo per la descrizione */
+        }
+
+        /* Indicatori a pillola in basso */
+        .slider-dots {
+            display: flex;
+            gap: 12px;
+            margin-top: 25px;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            background: #475569;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .dot.active {
+            background: #f83838;
+            width: 40px;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="index.html">Home</a>
+        <a href="attractions.html">Attractions</a>
+        <a href="culture.html">Culture & Tea</a>
+        <a href="food.html">Food & Pubs</a>
+        <a href="shopping.html">Modern Vibes</a>
+    </nav>
+
+    <section class="attractions-hero-slider">
+        <div class="slider-container">
+            <div class="attraction-card-effect" id="attraction-card">
+                <div class="image-box">
+                    <img id="attraction-img" src="BIG.jpg" alt="Big Ben">
+                </div>
+                <div class="overlay-content">
+                    <h2 id="attraction-title">The Big Ben</h2>
+                    <p id="attraction-desc">Loading...</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="slider-dots">
+            <span class="dot active" onclick="showSlide(0)"></span>
+            <span class="dot" onclick="showSlide(1)"></span>
+            <span class="dot" onclick="showSlide(2)"></span>
+            <span class="dot" onclick="showSlide(3)"></span>
+        </div>
+    </section>
+
+    <script>
+        // Testi e descrizioni approfondite e dettagliate per ciascuna attrazione
+        const attractionsData = [
+            {
+                title: "The Big Ben",
+                desc: "Standing majestically on the banks of the River Thames, the Elizabeth Tower (universally known as Big Ben) is the ultimate architectural symbol of London and British democracy. Completed in 1859 during the Victorian era, its world-famous clock mechanism is renowned for its reliability, and its distinctive chime has broadcast across the UK for generations, representing resilience and history.",
+                img: "BIG.jpg"
+            },
+            {
+                title: "The London Eye",
+                desc: "Perched gracefully on the South Bank, the London Eye is a monumental high-tech observation wheel offering a breathtaking, uninterrupted 360-degree panoramic view of the entire metropolis. On a clear day, visitors can gaze up to 40 kilometers into the distance, spotting iconic landmarks like Windsor Castle while enjoying one of the city's most innovative modern engineering achievements.",
+                img: "londoneye.jpg"
+            },
+            {
+                title: "Tower Bridge",
+                desc: "An engineering masterpiece of the late 19th century, Tower Bridge is a combined bascule and suspension bridge that crosses the River Thames close to the Tower of London. With its striking twin towers and neo-Gothic stone details, it stands as an unforgettable sight, especially when illuminated at night or when its massive bascules lift to let large ships pass through the heart of the capital.",
+                img: "download.webp"
+            },
+            {
+                title: "WB Studio Tour London",
+                desc: "Step directly onto authentic, behind-the-scenes sets and discover the cinematic magic that brought the Harry Potter film series to life. Wander down the cobbled stones of Diagon Alley, explore the grand Great Hall at Hogwarts, and examine thousands of intricate props and costumes crafted by world-class artisans, offering an immersive journey into Britain's modern cinematic legacy.",
+                img: "entrata.jpg"
+            }
+        ];
+
+        let currentIndex = 0;
+        let isAnimating = false;
+
+        const cardElement = document.getElementById('attraction-card');
+        const imgElement = document.getElementById('attraction-img');
+        const titleElement = document.getElementById('attraction-title');
+        const descElement = document.getElementById('attraction-desc');
+        const dots = document.querySelectorAll('.dot');
+
+        // Imposta subito i dati della prima slide all'avvio
+        imgElement.src = attractionsData[0].img;
+        titleElement.textContent = attractionsData[0].title;
+        descElement.textContent = attractionsData[0].desc;
+
+        function updateContent(newIndex) {
+            if (isAnimating) return;
+            isAnimating = true;
+
+            cardElement.classList.add('fade-out');
+
+            setTimeout(() => {
+                currentIndex = newIndex;
+                imgElement.src = attractionsData[currentIndex].img;
+                imgElement.alt = attractionsData[currentIndex].title;
+                titleElement.textContent = attractionsData[currentIndex].title;
+                descElement.textContent = attractionsData[currentIndex].desc;
+
+                dots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === currentIndex);
+                });
+
+                cardElement.classList.remove('fade-out');
+                isAnimating = false;
+            }, 300);
+        }
+
+        window.addEventListener('wheel', (e) => {
+            if (e.deltaY > 0) {
+                updateContent((currentIndex + 1) % attractionsData.length);
+            } else {
+                updateContent((currentIndex - 1 + attractionsData.length) % attractionsData.length);
+            }
+        });
+
+        function showSlide(index) {
+            if (index !== currentIndex && !isAnimating) {
+                updateContent(index);
+            }
+        }
+    </script>
+</body>
+</html>

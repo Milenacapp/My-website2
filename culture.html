@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Culture & Tea - London Guide</title>
+    <!-- Collegamento al tuo foglio di stile globale -->
+    <link rel="stylesheet" href="stylesheet.css">
+    <!-- Google Fonts: Playfair Display (stile elegante/londinese) e Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            /* Sfondo con tea4k.webp e overlay chiaro per far risaltare la foto */
+            background: linear-gradient(rgba(15, 23, 42, 0.45), rgba(15, 23, 42, 0.55)), url('tea4k.webp') no-repeat center center fixed;
+            background-size: cover;
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Applicazione del font elegante "stile londinese" ai titoli e agli elementi chiave */
+        h1, h2, h3, .navbar a {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Barra di navigazione fissa */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(8px);
+            padding: 18px 0;
+            text-align: center;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .navbar a {
+            color: #cbd5e1;
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: 600;
+            font-size: 18px;
+            letter-spacing: 0.5px;
+            transition: color 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #e2d9d9;
+        }
+
+        /* Stile personalizzato per i testi */
+        p {
+            font-weight: 300;
+            line-height: 1.7;
+            color: #e2e8f0;
+        }
+
+        h1 {
+            font-weight: 700;
+            font-size: 40px;
+        }
+
+        h2 {
+            font-weight: 600;
+            font-size: 28px;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Barra di navigazione fissa -->
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="attractions.html">Attractions</a>
+        <a href="culture.html">Culture & Tea</a>
+        <a href="food.html">Food & Pubs</a>
+        <a href="shopping.html">Modern Vibes</a>
+    </div>
+
+    <!-- Contenitore principale della pagina -->
+    <div class="content-wrapper" style="margin-top: 90px; padding: 20px; max-width: 950px; margin-left: auto; margin-right: auto;">
+        
+        <h1 style="text-align: center; margin-bottom: 40px;">London Culture & Afternoon Tea Tradition</h1>
+        
+        <!-- Sezione 1: Introduzione -->
+        <div style="margin-bottom: 60px;">
+            <h2>The British Afternoon Tea Experience</h2>
+            <p>No trip to London is truly complete without experiencing the legendary British afternoon tea. Rooted in aristocratic history dating back to the 1840s, this elegant ritual has evolved from a private afternoon snack into a world-famous cultural experience. Surrounded by London’s historic charm, sipping fine Earl Grey alongside freshly baked scones, clotted cream, and delicate finger sandwiches is an absolute must for any traveler wanting to live like a true local.</p>
+            
+            <div style="text-align: center; margin-top: 25px;">
+                <img src="afternoon.jpg" alt="Traditional London Afternoon Tea" class="hover-image" style="max-width: 700px; width: 100%; height: auto; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.5);">
+            </div>
+        </div>
+
+        <!-- Sezione Foto Storica -->
+        <div style="margin-bottom: 60px; text-align: center;">
+            <h2>A Timeless British Tradition</h2>
+            <p>An authentic glimpse into the Victorian roots of afternoon tea culture.</p>
+            
+            <div style="margin-top: 25px;">
+                <img src="classic.jpg" alt="Victorian Afternoon Tea" class="hover-image" style="max-width: 500px; width: 100%; height: auto; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.5);">
+            </div>
+        </div>
+
+        <!-- Sezione 2: The Ritz -->
+        <div style="margin-bottom: 60px;">
+            <h2>Iconic Luxury Afternoon Teas</h2>
+            <p><strong>The Ritz London, Palm Court:</strong> A timeless experience with ornate décor, live piano music, and 18 loose-leaf teas. Price: from £95 per person.</p>
+            
+            <div style="text-align: center; margin-top: 25px;">
+                <img src="ritz.jpg" alt="The Ritz London Afternoon Tea" class="hover-bw" style="max-width: 700px; width: 100%; height: auto; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.5);">
+            </div>
+        </div>
+
+        <!-- Sezione 3: The Savoy -->
+        <div style="margin-bottom: 60px;">
+            <p><strong>The Savoy, Thames Foyer:</strong> Offers a grand setting with over 30 teas, creative sandwiches, scones, and pastries. Champagne upgrades are available for a festive touch.</p>
+            
+            <div style="text-align: center; margin-top: 25px;">
+                <img src="savoy.jpg" alt="The Savoy London Afternoon Tea" class="hover-bw" style="max-width: 700px; width: 100%; height: auto; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.5);">
+            </div>
+        </div>
+
+        <!-- Sezione 4: Fortnum & Mason -->
+        <div style="margin-bottom: 60px;">
+            <p><strong>Fortnum & Mason, Diamond Jubilee Tea Salon:</strong> Located on Piccadilly, this elegant tea salon serves traditional three-tiered afternoon tea with vegan, vegetarian, and gluten-free options. Guests can also explore the store’s gourmet offerings afterward.</p>
+            
+            <div style="text-align: center; margin-top: 25px;">
+                <img src="picadilly.jpg" alt="Fortnum and Mason Afternoon Tea" class="hover-bw" style="max-width: 700px; width: 100%; height: auto; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.5);">
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
